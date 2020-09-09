@@ -1,0 +1,25 @@
+
+<%- include("partials/header"); -%>
+
+<h1>Home</h1>
+<p> <%= startingContent %> </p>
+
+<%  posts.forEach(function(post){ %>
+
+<h1><%=post.title%></h1>
+<p>
+<%=post.content.substring(0, 100) + " ..."%>
+<a href="/posts/<%=post._id%>">Read More</a>
+
+    <form action="/update" method="GET" class="display-inline">
+        <button name="post_id" type="submit" value="<%=post._id%>" class="btn btn-success">Update</button>
+    </form>
+    <form action="/remove" method="POST" class="display-inline">
+        <button name="post_id" type="submit" value="<%=post._id%>" class="btn btn-danger">Remove</button>
+    </form>
+</p>
+
+
+<% }) %>
+
+<%- include("partials/footer"); -%>

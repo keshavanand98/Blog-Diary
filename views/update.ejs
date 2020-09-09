@@ -1,0 +1,17 @@
+<%- include("partials/header"); -%>
+<h1 style="text-align: center;">Compose </h1>
+<p>
+<form action="/update" method="POST" >
+    <div class="form-group">
+        <label> Id </label>
+        <input type="text" class="form-control" name="postId" value="<%=id%>" readonly="readonly">
+        <label> Title </label>
+        <input type="text" class="form-control" name="postTitle" value="<%=title%>"> 
+        <label>Post</label>
+        <textarea id="w3review" class="form-control"  name="postBody" rows="5" cols="30"><%=content%></textarea>
+</div>
+    <button class="btn btn-primary" type="submit">Update</button>
+</form>
+
+</p>
+<%- include("partials/footer"); -%> 
